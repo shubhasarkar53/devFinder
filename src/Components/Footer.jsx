@@ -10,8 +10,9 @@ const Footer = () => {
     backgroundColor: "#333",
     color: "#fff",
     position: "fixed",
+    left: 0,
+    right: 0,
     bottom: 0,
-    width: "93%",
   };
 
   const textWithIconStyle = {
