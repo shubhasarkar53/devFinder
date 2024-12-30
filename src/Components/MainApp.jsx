@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa";
+
 import { useRecoilState } from "recoil";
 import { searchQueryAtom } from "../Store/Atoms/search-query-atom";
-import DisplayUser from "./DisplayUser";
-
+import "./mainApp.css";
 let clock;
 
 const MainApp = () => {
@@ -22,20 +21,17 @@ const MainApp = () => {
 
   };
 
-  const inputStyle = {
+
+
+  const smallScreenInputStyle = {
     padding: "10px 25px",
-    width: "300px",
-    fontSize: "16px",
+    maxWidth:"200px",
+    fontSize: "12px",
     borderRadius: "25px",
-    border: "1px solid #ddd",
-    marginBottom: "20px",
+    border: "1px solid red",
+    marginBottom: "10px",
   };
 
-  const taglineStyle = {
-    fontSize: "24px",
-    fontWeight: "bold",
-    marginBottom: "30px",
-  };
 
   function searchUser(developerUsername) {
     // console.log("searching user");
@@ -53,13 +49,13 @@ const MainApp = () => {
 
   return (
     <div style={mainAppStyle}>
-      <div style={taglineStyle}>Find Your Developer in a Snap!</div>
+      <div  className="tagline">Find Your Developer in a Snap!</div>
       <input
         type="text"
         placeholder="Search a developer using GitHub ID"
         value={dearchTerm}
         onChange={debouneddearchTerm}
-        style={inputStyle}
+        className="input-field"
       />
     </div>
   );
